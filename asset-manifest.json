@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.fbb03e78.css",
+    "main.js": "/portfolio/static/js/main.fbac2879.js",
+    "static/media/profile.png": "/portfolio/static/media/profile.85bd5e77da46af6cafdc.png",
+    "static/media/frisk.png": "/portfolio/static/media/frisk.98e87d0c4154b7e3d45b.png",
+    "static/media/neroksi.png": "/portfolio/static/media/neroksi.3ef9470698344a7d1ada.png",
+    "static/media/bitcoin-analyzer.png": "/portfolio/static/media/bitcoin-analyzer.9ba34ffadb9334ad800d.png",
+    "static/media/logo.svg": "/portfolio/static/media/logo.a88fd4d9e4f9c383002afd2635ec3aba.svg",
+    "index.html": "/portfolio/index.html",
+    "main.fbb03e78.css.map": "/portfolio/static/css/main.fbb03e78.css.map",
+    "main.fbac2879.js.map": "/portfolio/static/js/main.fbac2879.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbb03e78.css",
+    "static/js/main.fbac2879.js"
+  ]
+}
