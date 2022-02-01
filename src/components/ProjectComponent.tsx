@@ -4,7 +4,8 @@ interface Props {
   project: {
     name: string,
     description: string,
-    link: string
+    link: string,
+    image: string
   }
 }
 
@@ -13,7 +14,7 @@ const ProjectComponent = ( { project }: Props ): JSX.Element => {
   return (
     <a href={`${project.link}`} target="_blank" rel="noreferrer noopener">
       <button>
-        <div style={{ height: 175, backgroundColor: 'brown' }}></div>
+        <img src={require(`../assets/${project.image}`)} alt='' width={'100%'}></img>
         <h3>{project.name}</h3>
         <p>{project.description}</p>
       </button>
