@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio-page/static/css/main.aa390b9f.css",
-    "main.js": "/portfolio-page/static/js/main.855132e7.js",
+    "main.css": "/portfolio-page/static/css/main.ae2fba27.css",
+    "main.js": "/portfolio-page/static/js/main.8bf12c98.js",
     "static/media/profile.png": "/portfolio-page/static/media/profile.85bd5e77da46af6cafdc.png",
     "static/media/frisk.png": "/portfolio-page/static/media/frisk.98e87d0c4154b7e3d45b.png",
     "static/media/neroksi.png": "/portfolio-page/static/media/neroksi.3ef9470698344a7d1ada.png",
     "static/media/bitcoin-analyzer.png": "/portfolio-page/static/media/bitcoin-analyzer.9ba34ffadb9334ad800d.png",
     "static/media/logo.svg": "/portfolio-page/static/media/logo.a88fd4d9e4f9c383002afd2635ec3aba.svg",
     "index.html": "/portfolio-page/index.html",
-    "main.aa390b9f.css.map": "/portfolio-page/static/css/main.aa390b9f.css.map",
-    "main.855132e7.js.map": "/portfolio-page/static/js/main.855132e7.js.map"
+    "main.ae2fba27.css.map": "/portfolio-page/static/css/main.ae2fba27.css.map",
+    "main.8bf12c98.js.map": "/portfolio-page/static/js/main.8bf12c98.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa390b9f.css",
-    "static/js/main.855132e7.js"
+    "static/css/main.ae2fba27.css",
+    "static/js/main.8bf12c98.js"
   ]
 }
