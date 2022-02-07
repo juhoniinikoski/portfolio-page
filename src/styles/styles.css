@@ -52,6 +52,11 @@ header {
   align-items: center;
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
 h1 {
   font-family: 'Oswald';
   line-height: 56px;
@@ -91,6 +96,7 @@ p {
   font-weight: normal;
   margin: 0px;
   padding: 0px;
+  word-break: break-word;
 }
 
 button {
@@ -133,9 +139,15 @@ button:disabled {
   color: white;
 }
 
+.header-buttons-container {
+  flex: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .home-introduction {
   flex: 1;
-  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +168,6 @@ button:disabled {
   margin-top: 36px;
   height: 50px;
   width: 150px;
-  margin-right: 24px;
   border: 3px solid var(--secondary-dark);
   text-align: center;
   font-size: 17px;
@@ -208,10 +219,111 @@ button:disabled {
   color: white;
 }
 
-.email-input {
+.form-input {
   flex: 1;
   background-color: var(--light-grey);
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 17px;
   padding: 24px;
+}
+
+.form-name-email-container {
+  display: flex;
+}
+
+.form-input-name {
+  flex: 1;
+  background-color: var(--light-grey);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 17px;
+  padding: 24px;
+  margin-right: 8px;
+}
+
+.form-input-email {
+  flex: 1;
+  background-color: var(--light-grey);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 17px;
+  padding: 24px;
+  margin-left: 8px;
+}
+
+.profile-pic {
+  height: 500px;
+}
+
+@media screen and (max-width: 992px) {
+
+  .main-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 796px) {
+
+  .home-introduction {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .introduction-text {
+    margin-top: 36px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .profile-pic {
+    height: 350px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  
+  .project-grid-container {
+    margin-top: 36px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+}
+
+@media screen and (max-width: 560px) {
+  
+  .form-name-email-container {
+    flex-direction: column;
+  }
+
+  .form-input-email {
+    margin-left: 0px;
+  }
+
+  .form-input-name {
+    margin-right: 0px;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header-buttons-container {
+    margin-top: 24px;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  .main-container {
+    width: 90%;
+  }
+
 }

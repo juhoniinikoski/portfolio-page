@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { MdSend } from 'react-icons/md'
+import { MdSend, MdOutlineDone } from 'react-icons/md'
 
 type HandleChangeType = React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>
 
 const ContactForm = (): JSX.Element => {
 
   const [disabled, setDisabled] = React.useState<boolean>(true);
-  const [name, setName] = React.useState<string>('')
-  const [email, setEmail] = React.useState<string>('')
-  const [subject, setSubject] = React.useState<string>('')
-  const [message, setMessage] = React.useState<string>('')
+  const [name, setName] = React.useState<string>('');
+  const [email, setEmail] = React.useState<string>('');
+  const [subject, setSubject] = React.useState<string>('');
+  const [message, setMessage] = React.useState<string>('');
+
+  const [showSent, setShowSent] = React.useState<boolean>(false);
 
   const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
@@ -22,6 +24,7 @@ const ContactForm = (): JSX.Element => {
     console.log(result)
     const formFunctions = [setName, setEmail, setSubject, setMessage];
     formFunctions.forEach((fcn: React.Dispatch<React.SetStateAction<string>>) => fcn(''))
+    setShowSent(true);
   }
 
   const handleChange = (e: HandleChangeType): void => {
@@ -43,28 +46,26 @@ const ContactForm = (): JSX.Element => {
 
   return (
     <form style={{marginTop: 32}} onSubmit={handleSubmit}>
-      <div style={{display: 'flex', height: 80}}>
+      <div className='form-name-email-container'>
         <input
           placeholder='Name'
           value={name}
           onChange={handleChange}
-          style={{marginRight: 8}}
-          className='email-input'
+          className='form-input-name'
         />
         <input
           placeholder='Email'
           value={email}
           onChange={handleChange}
-          style={{marginLeft: 8}}
-          className='email-input'
+          className='form-input-email'
         />
       </div>
-      <div style={{display: 'flex', height: 80}}>
+      <div style={{display: 'flex'}}>
         <input
           value={subject}
           onChange={handleChange}
           placeholder='Subject'
-          className='email-input'
+          className='form-input'
         />
       </div>
       <div style={{display: 'flex', position: 'relative'}}>
@@ -73,13 +74,18 @@ const ContactForm = (): JSX.Element => {
           onChange={handleChange}
           placeholder='Message'
           style={{height: 180, minHeight: 180}}
-          className='email-input'
+          className='form-input'
         />
         <button type='submit' disabled={disabled} className='send-button' style={{position: 'absolute', bottom: 24, right: 24}}>
+          {showSent ?
           <div style={{display: 'flex', alignItems: 'center'}}>
+            <p>Message sent</p>
+            <MdOutlineDone size={20} style={{marginLeft: 12}} />
+          </div> 
+          : <div style={{display: 'flex', alignItems: 'center'}}>
             <p>Send message</p>
             <MdSend size={20} style={{marginLeft: 12}} />
-          </div>
+          </div>}
         </button>
       </div>
     </form>

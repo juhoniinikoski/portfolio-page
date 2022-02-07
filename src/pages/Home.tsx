@@ -25,15 +25,15 @@ const Home = (): JSX.Element => {
     <Layout>
       <div>
         <section className='home-introduction'>
-          <img src={require('../assets/profile.png')} alt='' height={'100%'}></img>
+          <img className='profile-pic' src={require('../assets/profile.png')} alt=''></img>
           <div className='introduction-text'>
             <h1>{textContent.title}</h1>
             <p>{textContent.description}</p>
             <div style={{display: 'flex'}}>
-              <button onClick={handleClick} className='introduction-button'>
+              <button style= {{marginRight: 12}} onClick={handleClick} className='introduction-button'>
                 <h4>Contact me</h4>
               </button>
-              <button onClick={handleScroll} className='introduction-button'>
+              <button style= {{marginLeft: 12}} onClick={handleScroll} className='introduction-button'>
                 <h4>My work</h4>
               </button>
             </div>

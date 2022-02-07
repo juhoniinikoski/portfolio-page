@@ -1,6 +1,6 @@
 export const textContent = {
   title: "Hi, I’m Juho, an aspiring Software Engineer",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  description: "I am a student specializing in applying cross-disciplinary learnings into context of software, currently taking my second year of studies towards a bachelor's degree. Recently I’ve been focused on building my expertise in full stack development with JavaScript frameworks.",
   projectsTitle: "Latest projects",
   projectsDescription: "Check out my personal projects here. By clicking the box you are redirected to GitHub, where you can learn more about projects and code written.",
   coursesTitle: "Relevant courses taken",
@@ -8,7 +8,7 @@ export const textContent = {
   educationTitle: "Education",
   experienceTitle: "Working experience",
   contactTitle: "Contact me",
-  contactDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  contactDescription: "Whether you have a question or just want to say hi, my inbox is always open! Use the form below. Or, for a quicker response, ping me over on "
 }
 
 export const education = {

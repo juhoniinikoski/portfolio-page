@@ -15,7 +15,7 @@ const HeaderComponent = (): JSX.Element => {
           <Logo style={{alignSelf: 'flex-start'}}/>
         </div>
       </Link>
-      <div style={{flex: 9, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div className='header-buttons-container'>
         <div style={{display: 'flex'}}>
           <Link className='header-link'style={{color: selectedIndex === 0 ? '#080A0D' : '#A6A6A6'}} to={"/work"}>
             Work
