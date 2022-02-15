@@ -1,5 +1,7 @@
+import axios from 'axios';
 import * as React from 'react';
-import { MdSend, MdOutlineDone } from 'react-icons/md'
+import { MdSend, MdOutlineDone, MdOutlineDoNotDisturbOn } from 'react-icons/md';
+import ClipLoader from "react-spinners/ClipLoader";
 
 type HandleChangeType = React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>
 
@@ -11,20 +13,38 @@ const ContactForm = (): JSX.Element => {
   const [subject, setSubject] = React.useState<string>('');
   const [message, setMessage] = React.useState<string>('');
 
-  const [showSent, setShowSent] = React.useState<boolean>(false);
+  const [status, setStatus] = React.useState<string>("Send message");
+  const [sending, setSending] = React.useState<boolean>(false);
 
-  const handleSubmit = (e: React.SyntheticEvent): void => {
+  const clearFields = () => {
+    const formFunctions = [setName, setEmail, setSubject, setMessage];
+    formFunctions.forEach((fcn: React.Dispatch<React.SetStateAction<string>>) => fcn(''));
+  }
+
+  const setStatusMessage = (message: string) => {
+    setStatus(message)
+    setTimeout(() => {
+      setStatus("Send message")
+    }, 3000);
+  }
+
+  const handleSubmit = async (e: React.SyntheticEvent): Promise<void> => {
     e.preventDefault();
-    const result = {
-      sender: name,
-      senderEmail: email,
+    setSending(true);
+    const data = {
+      name: name,
+      email: email,
       subject: subject,
       message: message
     }
-    console.log(result)
-    const formFunctions = [setName, setEmail, setSubject, setMessage];
-    formFunctions.forEach((fcn: React.Dispatch<React.SetStateAction<string>>) => fcn(''))
-    setShowSent(true);
+    try {
+      await axios.post("https://warm-earth-12766.herokuapp.com/new", data);
+      clearFields();
+      setStatusMessage("Message sent");
+    } catch (error) {
+      setStatusMessage("Couldn't send message");
+    }
+    setSending(false);
   }
 
   const handleChange = (e: HandleChangeType): void => {
@@ -77,15 +97,21 @@ const ContactForm = (): JSX.Element => {
           className='form-input'
         />
         <button type='submit' disabled={disabled} className='send-button' style={{position: 'absolute', bottom: 24, right: 24}}>
-          {showSent ?
-          <div style={{display: 'flex', alignItems: 'center'}}>
-            <p>Message sent</p>
-            <MdOutlineDone size={20} style={{marginLeft: 12}} />
-          </div> 
-          : <div style={{display: 'flex', alignItems: 'center'}}>
-            <p>Send message</p>
-            <MdSend size={20} style={{marginLeft: 12}} />
-          </div>}
+          {sending ?
+            <div style={{display: 'flex', alignItems: 'center'}}>
+              <ClipLoader size={20}/>
+            </div>
+              : 
+            <div style={{display: 'flex', alignItems: 'center'}}>
+              <p>{status}</p>
+              {status === "Send message" ? 
+                <MdSend size={20} style={{marginLeft: 12}} /> :
+                status === "Couldn't send message" ?
+                <MdOutlineDoNotDisturbOn size={20} style={{marginLeft: 12}}/> :
+                <MdOutlineDone size={20} style={{marginLeft: 12}} />
+              }
+            </div>
+          }
         </button>
       </div>
     </form>
