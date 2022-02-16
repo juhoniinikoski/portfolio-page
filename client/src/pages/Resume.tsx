@@ -3,6 +3,10 @@ import Layout from '../components/Layout';
 import { technologies } from '../content/technologies';
 import { education, experience, relevantCourses, textContent } from '../content/textContent';
 
+const handleClick = (link: string) => {
+  window.open(link);
+}
+
 const Resume = (): JSX.Element => {
   return (
     <Layout>
@@ -18,18 +22,16 @@ const Resume = (): JSX.Element => {
         <h2>{textContent.technologyTitle}</h2>
         <div style={{display: 'flex', flexWrap: 'wrap'}}>
           {technologies.map(t =>
-            <a href={t.link} target="_blank" rel="noreferrer noopener">
-              <button className='tech-box'>
-                <p>{t.name}</p>
-              </button>
-            </a>
+            <button key={t.name} className='tech-box' onClick={() => handleClick(t.link)}>
+              <p>{t.name}</p>
+            </button>
           )}
         </div>
       </section>
       <section style={{alignSelf: 'flex-start', textAlign: 'start', marginTop: 36}}>
         <h2 style={{marginBottom: 0}}>{textContent.coursesTitle}</h2>
         {relevantCourses.map(c => 
-          <div>
+          <div key={c.name}>
             <h4 style={{marginTop: 24}}>{c.name}</h4>
             <p className='light-text'>{c.school}</p>
             <p style={{marginTop: 16}}>{c.description}</p>
@@ -39,7 +41,7 @@ const Resume = (): JSX.Element => {
       <section style={{alignSelf: 'flex-start', textAlign: 'start', marginTop: 36}}>
         <h2 style={{marginBottom: 0}}>{textContent.experienceTitle}</h2>
         {experience.map(e => 
-          <div>
+          <div key={e.title}>
             <h4 style={{marginTop: 24}}>{e.title}</h4>
             <p className='light-text'>{e.employer}</p>
             <p style={{marginTop: 16}}>{e.description}</p>

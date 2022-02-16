@@ -105,6 +105,7 @@ button {
   cursor: pointer;
   padding: 0px;
   text-align: center;
+  color: var(--primary-dark);
 }
 
 button:disabled {
