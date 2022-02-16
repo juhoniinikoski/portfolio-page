@@ -1,5 +1,7 @@
 # Portfolio
 
+https://juhoniinikoski.github.io/portfolio-page
+
 ## About
 
 This project is a portfolio webpage showcasing my skills, projects and working experience, including a contact form, which sends messages to my Notion database.
