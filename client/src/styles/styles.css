@@ -62,25 +62,24 @@ h1 {
   line-height: 56px;
   font-size: 48px;
   font-weight: bold;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 24px;
-  padding: 0px;
+  padding: 0;
 }
 
 h2 {
   font-family: 'Oswald';
-  line-height: auto;
   font-size: 36px;
   font-weight: bold;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 24px;
-  padding: 0px;
+  padding: 0;
 }
 
 h3 {
   font-size: 20px;
   font-weight: bold;
-  margin: 0px;
+  margin: 0;
   margin-top: 16px;
   margin-bottom: 8px;
 }
@@ -88,22 +87,21 @@ h3 {
 h4 {
   font-size: 17px;
   font-weight: bold;
-  margin: 0px;
+  margin: 0;
 }
 
 p {
   font-size: 17px;
   font-weight: normal;
-  margin: 0px;
-  padding: 0px;
-  word-break: break-word;
+  margin: 0;
+  padding: 0;
 }
 
 button {
   background-color: transparent;
   border-style: none;
   cursor: pointer;
-  padding: 0px;
+  padding: 0;
   text-align: center;
   color: var(--primary-dark);
 }
@@ -134,10 +132,9 @@ button:disabled {
   text-decoration: none;
   font-size: 17px;
   font-weight: bold;
-  margin: 0px;
+  margin: 0;
   margin-left: 32px;
   margin-right: 32px;
-  color: white;
 }
 
 .header-buttons-container {
@@ -200,7 +197,7 @@ button:disabled {
   display: grid;
   grid-row: auto auto;
   gap: 36px 16px;
-  padding: 0px;
+  padding: 0;
 }
 
 .light-text {
@@ -291,7 +288,7 @@ button:disabled {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0px;
+    padding: 0;
   }
 
 }
@@ -303,11 +300,11 @@ button:disabled {
   }
 
   .form-input-email {
-    margin-left: 0px;
+    margin-left: 0;
   }
 
   .form-input-name {
-    margin-right: 0px;
+    margin-right: 0;
   }
 
   header {
